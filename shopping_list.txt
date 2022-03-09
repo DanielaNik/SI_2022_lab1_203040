@@ -1,5 +1,5 @@
-Bananas
-Yoghurt
-Noodles
-Ajvar
-Milk
+Bananas x 5
+Yoghurt x 2
+Noodles x 10
+Ajvar x 1
+Milk x 3
