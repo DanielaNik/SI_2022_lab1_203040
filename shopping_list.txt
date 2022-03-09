@@ -1,5 +1,6 @@
 Bananas x 5
 Yoghurt x 2
 Noodles x 10
-Ajvar x 1
+Ajvar x 6
 Milk x 3
+Bread x 1
