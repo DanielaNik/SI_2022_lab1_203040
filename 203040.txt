@@ -1,0 +1,126 @@
+Lab 1 Notes
+4)	 git clone https://github.com/DanielaNik/SI_2022_lab1_203040.git SI_LAB1 - прави клонирање (копија) на оддалечениот репозиториум во локален репозиториум, во случајот, јас нагласив дека сакам да се клонира во нов фолдер со име SI_LAB1.
+cd SI_LAB1 – влез во фолдерот на проектот
+
+5)	Додавање на сите направени промени (креиран нов фајл и додадена содржина во истиот): git add –-all 
+Поставување на промените на сцена: git commit -m “Add 5 items to the shopping list”
+
+6)	git commit -a -m “Add quantities to the items”
+Оваа команда во една линија ги додаде промените и ги постави на сцена.
+
+7)	git branch branch1
+	git branch branch2
+Се креираа 2 нови гранки, но се уште се наоѓаме на master.
+
+8)	C:\Users\danie\Documents\SI_LAB1>git log
+commit 4e785360008c00f0ef4a2190cc2a9d563e2f8ac9 (HEAD -> master, branch2, branch1)
+Author: Daniela Nikolovska <daniela.nikolovska@students.finki.ukim.mk>
+Date:   Wed Mar 9 16:44:55 2022 +0100
+
+    Add quantities to the items
+
+commit c288409e9abb63a3fd1d6b643e5cd50b52d6ba5e
+Author: Daniela Nikolovska <daniela.nikolovska@students.finki.ukim.mk>
+Date:   Wed Mar 9 16:40:05 2022 +0100
+
+    Add 5 items to the shopping list
+
+commit f5ff8422311150aad7eeb707fe86345724aec1d6 (origin/master, origin/HEAD)
+Author: Daniela Nikolovska <78151622+DanielaNik@users.noreply.github.com>
+Date:   Wed Mar 9 16:26:14 2022 +0100
+
+    Update README.md
+
+commit 00b4377e317d877d0524727af8c01c6b56dcfdff
+Author: Daniela Nikolovska <78151622+DanielaNik@users.noreply.github.com>
+Date:   Wed Mar 9 16:25:04 2022 +0100
+
+9)	git push origin --all
+Ги префрла сите гранки и новите commits во оддалечениот репозиториум наречен origin
+10)	git checkout branch1 
+	Префрлување од master на гранката branch1
+11)	git commit -a -m "Change quantity of item #5"
+12)	git checkout master
+13)	git commit -a -m "Change quantity of item #2"
+14)	git push origin –all
+15)	git checkout branch2
+16)	git commit -a -m "Modify item #4"
+17)	C:\Users\danie\Documents\SI_LAB1>git log
+commit 307683c36d6da6e59db8dcc1f8fd4544f01e8764 (HEAD -> branch2)
+Author: Daniela Nikolovska <daniela.nikolovska@students.finki.ukim.mk>
+Date:   Wed Mar 9 17:22:28 2022 +0100
+
+    Modify item #4
+
+commit 4e785360008c00f0ef4a2190cc2a9d563e2f8ac9 (origin/branch2)
+Author: Daniela Nikolovska <daniela.nikolovska@students.finki.ukim.mk>
+Date:   Wed Mar 9 16:44:55 2022 +0100
+
+    Add quantities to the items
+
+commit c288409e9abb63a3fd1d6b643e5cd50b52d6ba5e
+Author: Daniela Nikolovska <daniela.nikolovska@students.finki.ukim.mk>
+Date:   Wed Mar 9 16:40:05 2022 +0100
+
+    Add 5 items to the shopping list
+
+commit f5ff8422311150aad7eeb707fe86345724aec1d6
+Author: Daniela Nikolovska <78151622+DanielaNik@users.noreply.github.com>
+Date:   Wed Mar 9 16:26:14 2022 +0100
+
+    Update README.md
+
+commit 00b4377e317d877d0524727af8c01c6b56dcfdff
+Author: Daniela Nikolovska <78151622+DanielaNik@users.noreply.github.com>
+Date:   Wed Mar 9 16:25:04 2022 +0100
+
+    Initial commit
+
+18)	git reset --soft  HEAD^  -Го враќа последниот commit на stage, за да се додадат промени
+git commit -a -m “Modify item #4 and add item #6”
+
+19) C:\Users\danie\Documents\SI_LAB1>git log
+commit 3a1530db6bfc8e76ad25230f883b7419f930177d (HEAD -> branch2)
+Author: Daniela Nikolovska <daniela.nikolovska@students.finki.ukim.mk>
+Date:   Wed Mar 9 17:29:20 2022 +0100
+
+    Modify item #4 and add item #6
+
+commit 4e785360008c00f0ef4a2190cc2a9d563e2f8ac9 (origin/branch2)
+Author: Daniela Nikolovska <daniela.nikolovska@students.finki.ukim.mk>
+Date:   Wed Mar 9 16:44:55 2022 +0100
+
+    Add quantities to the items
+
+commit c288409e9abb63a3fd1d6b643e5cd50b52d6ba5e
+Author: Daniela Nikolovska <daniela.nikolovska@students.finki.ukim.mk>
+Date:   Wed Mar 9 16:40:05 2022 +0100
+
+    Add 5 items to the shopping list
+
+commit f5ff8422311150aad7eeb707fe86345724aec1d6
+Author: Daniela Nikolovska <78151622+DanielaNik@users.noreply.github.com>
+Date:   Wed Mar 9 16:26:14 2022 +0100
+
+    Update README.md
+
+commit 00b4377e317d877d0524727af8c01c6b56dcfdff
+Author: Daniela Nikolovska <78151622+DanielaNik@users.noreply.github.com>
+Date:   Wed Mar 9 16:25:04 2022 +0100
+
+    Initial commit
+
+20)	git checkout master
+	git merge branch1
+	Со овие две команди се направи префрлување на гранката master и нејзино спојување со branch1. Во ова спојување не се случи конфликт и се споија со ort – рекурзивна стратегија.
+21)	Доколку извршиме: git merge branch2
+	Во ова спојување има конфликт. Еден од начините да се реши конфликтот е да се одбере една од верзиите која што го прави конфликтот. Во овој случај, има ставки кои имаат различни количини а и е додадена нова, 6та ставка во branch2. Јас одбрав да го решам конфликтот така што ќе ја оставам верзијата која што ја имаше во branch2.
+	По едитирање на фајлот ги извршив командите: 
+git commit -a -m "avoiding conflict"
+git merge branch2
+	Со тоа што овој пат се споија успешно, без конфликти, по fast-forward стратегија.
+
+22) git commit -a -m “Add docs”
+23) git push origin --all
+	 	 
+	
